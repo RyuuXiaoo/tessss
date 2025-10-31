@@ -1,1 +1,24 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RyuuXiao Web Store</title><link rel="stylesheet" href="styles.css"/><script defer src="config.js"></script><script defer src="app.js"></script></head><body><header><div class="container" style="display:flex;justify-content:space-between;align-items:center"><h1>🛒 RyuuXiao Web Store</h1><div class="nav"><a class="pill" href="admin.html">Admin</a><a class="pill" href="api.html">API Docs</a><span class="pill">WIB</span></div></div></header><main class="container"><section class="hero"><div class="kpi"><div class="label">Saldo Anda</div><div class="value" id="userBalance">Rp0</div></div><div class="kpi"><div class="label">Biaya Admin</div><div class="value"><span id="feePct">3</span>%</div></div><div class="kpi"><div class="label">Produk Tersedia</div><div class="value" id="prodCount">0</div></div></section><section class="panel" style="margin-top:14px"><div style="display:flex;gap:10px;flex-wrap:wrap"><input id="search" placeholder="Cari produk..."/><select id="category"></select><button class="btn btn-secondary" id="reset">Reset</button></div><div id="productGrid" class="grid"></div></section></main><footer>© <span id="year"></span> RyuuXiao Store • Demo statis.</footer><dialog id="buyDialog"><div class="modal-head"><strong>Checkout</strong><button class="btn btn-secondary" onclick="buyDialog.close()">Tutup</button></div><div class="modal-body" id="checkoutBody"></div></dialog><dialog id="deliverDialog"><div class="modal-head"><strong>Produk Dikirim</strong><button class="btn btn-secondary" onclick="deliverDialog.close()">Tutup</button></div><div class="modal-body" id="deliverBody"></div></dialog></body></html>
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RyuuXiao Web Store</title><link rel="stylesheet" href="styles.css"/>
+<script defer src="config.js"></script><script defer src="app.js"></script></head>
+<body>
+<header><div class="container row" style="justify-content:space-between">
+<h1>🛒 RyuuXiao Web Store</h1>
+<div class="nav"><a class="pill" href="admin.html">Admin</a><a class="pill" href="api.html">API Docs</a><button id="themeToggle" class="pill" type="button">🌙/☀️</button></div>
+</div></header>
+<main class="container">
+<section class="panel row" style="justify-content:space-between">
+<div>Saldo: <strong id="userBalance">Rp0</strong></div>
+<div>Biaya Admin: <strong id="feePct">3%</strong></div>
+<div>Produk Tersedia: <strong id="prodCount">0</strong></div>
+</section>
+<section class="panel">
+<div class="row"><input id="search" placeholder="Cari produk..."/><select id="category"></select><button id="reset" class="btn-ghost">Reset</button></div>
+<div id="productGrid" class="grid" style="margin-top:12px"></div>
+</section>
+</main>
+<div id="toast"></div>
+<dialog id="buyDialog"><div class="panel"><div class="row" style="justify-content:space-between"><strong>Checkout</strong><button class="btn-ghost" onclick="buyDialog.close()">Tutup</button></div><div id="checkoutBody"></div></div></dialog>
+<dialog id="deliverDialog"><div class="panel"><div class="row" style="justify-content:space-between"><strong>Produk Dikirim</strong><button class="btn-ghost" onclick="deliverDialog.close()">Tutup</button></div><div id="deliverBody"></div></div></dialog>
+</body></html>
