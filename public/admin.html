@@ -5,13 +5,59 @@
 <body>
 <header><div class="container row" style="justify-content:space-between">
 <h1>🛠️ Admin Panel</h1>
-<div class="nav"><a class="pill" href="index.html">Store</a><a class="pill" href="api.html">API Docs</a><button id="themeToggle" class="pill" type="button">🌙/☀️</button></div>
-</div></header>
+<div class="nav">
+  <a class="pill" href="index.html">Store</a>
+  <a class="pill" href="api.html">API Docs</a>
+  <button id="themeToggle" class="pill" type="button">🌙/☀️</button>
+</div></div></header>
 <main class="container">
-<section id="gate" class="panel"><h3>Masuk Admin</h3><div class="row"><input id="u" placeholder="Admin"/><input id="p" type="password" placeholder="Password"/><button id="loginBtn" class="btn">Masuk</button></div><div class="badge">Default: admin / ryuu</div></section>
+<section id="gate" class="panel">
+  <h3>Masuk Admin</h3>
+  <div class="row"><input id="u" placeholder="Admin"/><input id="p" type="password" placeholder="Password"/><button id="loginBtn" class="btn">Masuk</button></div>
+  <div class="badge">Default: admin / ryuu</div>
+</section>
+
 <section id="adminArea" style="display:none">
-<div class="panel"><h3>Saldo Simulasi</h3><div class="row"><input id="balanceInput" type="number" placeholder="Saldo (Rp)"/><button id="setBalance" class="btn">Set</button></div></div>
-<div class="panel"><h3>Produk</h3><div class="row"><input id="id" placeholder="id"/><input id="name" placeholder="nama"/><input id="price" type="number" placeholder="harga"/><input id="profit" type="number" placeholder="profit"/><input id="category" placeholder="kategori"></div><textarea id="desc" rows="2" placeholder="deskripsi" style="margin-top:6px"></textarea><textarea id="snk" rows="2" placeholder="SNK" style="margin-top:6px"></textarea><div class="row" style="justify-content:flex-end"><button id="saveProduct" class="btn">Simpan/Update</button></div></div>
-<div class="panel"><h3>Tambah Stok</h3><div class="row"><input id="sid" placeholder="id produk"/><input id="sprice" type="number" placeholder="opsional harga per akun"/></div><div class="badge">Format: email|password|profil|-|2fa|hargaOptional (satu per baris)</div><textarea id="stockArea" rows="6" placeholder="email1@gmail.com|pass|profil|-|2fa|30000"></textarea><div class="row" style="justify-content:flex-end"><button id="addStock" class="btn">Tambahkan</button></div></div>
-<div class="panel"><div class="row" style="justify-content:space-between"><h3>Daftar Produk</h3><input id="searchProd" placeholder="Cari produk di tabel..."/></div><table id="prodTable"><thead><tr><th>ID</th><th>Nama</th><th>Harga</th><th>Kategori</th><th>Stok</th><th>Terjual</th><th>Aksi</th></tr></thead><tbody></tbody></table></div>
-</section></main><div id="toast"></div></body></html>
+  <div class="panel">
+    <h3>Saldo Simulasi</h3>
+    <div class="row"><input id="balanceInput" type="number" placeholder="Saldo (Rp)"/><button id="setBalance" class="btn">Set</button></div>
+  </div>
+
+  <div class="panel">
+    <h3>Produk</h3>
+    <div class="row"><input id="id" placeholder="id"/><input id="name" placeholder="nama"/><input id="price" type="number" placeholder="harga"/><input id="profit" type="number" placeholder="profit"/><input id="category" placeholder="kategori"></div>
+    <textarea id="desc" rows="2" placeholder="deskripsi" style="margin-top:6px"></textarea>
+    <textarea id="snk" rows="2" placeholder="SNK" style="margin-top:6px"></textarea>
+    <div class="row" style="justify-content:flex-end"><button id="saveProduct" class="btn">Simpan/Update</button></div>
+  </div>
+
+  <div class="panel">
+    <h3>Tambah Stok</h3>
+    <div class="row"><input id="sid" placeholder="id produk"/><input id="sprice" type="number" placeholder="opsional harga per akun"/></div>
+    <div class="badge">Format: email|password|profil|-|2fa|hargaOptional (satu per baris)</div>
+    <textarea id="stockArea" rows="6" placeholder="email1@gmail.com|pass|profil|-|2fa|30000"></textarea>
+    <div class="row" style="justify-content:flex-end"><button id="addStock" class="btn">Tambahkan</button></div>
+  </div>
+
+  <div class="panel">
+    <div class="row" style="justify-content:space-between">
+      <h3>Daftar Produk</h3>
+      <div class="row">
+        <input id="searchProd" placeholder="Cari produk…"/>
+        <button id="btnBackup" class="btn-ghost">Backup JSON</button>
+        <label class="btn-ghost" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer">
+          Restore JSON <input id="restoreFile" type="file" accept="application/json" style="display:none"/>
+        </label>
+      </div>
+    </div>
+    <div class="tablewrap">
+      <table id="prodTable">
+        <thead><tr><th>ID</th><th>Nama</th><th>Harga</th><th>Kategori</th><th>Stok</th><th>Terjual</th><th>Aksi</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+</main>
+<div id="toast"></div>
+</body></html>
