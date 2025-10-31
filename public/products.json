@@ -1,0 +1,23 @@
+{
+  "categories": [
+    "Streaming",
+    "Game",
+    "Tools"
+  ],
+  "products": [
+    {
+      "id": "netflix",
+      "name": "Netflix 1 Bulan",
+      "desc": "Akun Netflix premium",
+      "snk": "Garansi 7 hari",
+      "price": 30000,
+      "profit": 5000,
+      "terjual": 0,
+      "category": "Streaming",
+      "stok": [
+        "acc1@mail.com|pass1|Standard|-|2FA1|32000",
+        "acc2@mail.com|pass2|Premium|-|2FA2|32000"
+      ]
+    }
+  ]
+}
